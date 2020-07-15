@@ -8,7 +8,7 @@ public class BlogController {
 
     @GetMapping(value = "/")
     public String index() {
-        return "Index";
-    }
 
+        return "Hello Spring";
+    }
 }
