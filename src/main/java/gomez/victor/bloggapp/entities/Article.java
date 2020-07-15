@@ -1,4 +1,4 @@
-package entities;
+package gomez.victor.bloggapp.entities;
 
 import javax.persistence.*;
 import java.util.Date;
