@@ -20,13 +20,13 @@ public class BlogController {
     @Autowired
     private PostService postService;
 
-    @GetMapping(value = "/")
-    public String index() {
 
-        return "Hello Spring";
+    @GetMapping(value = "/")
+    public String Greetings() {
+        return "Hej Spring";
     }
 
-    @GetMapping(value = "/post")
+    @GetMapping(value = "/articles")
     public List<Article> articles() {
         return postService.getAllArticles();
     }

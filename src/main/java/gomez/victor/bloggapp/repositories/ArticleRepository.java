@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-
-    List<Article> findById(Long id);
+    //Here some code
 
 }
