@@ -20,17 +20,19 @@ public class BlogController {
     @Autowired
     private PostService postService;
 
-
+/*  Just to test the localhost 8080
     @GetMapping(value = "/")
-    public String Greetings() {
+    public String testConnection() {
         return "Hej Spring";
     }
+ */
 
     @GetMapping(value = "/articles")
     public List<Article> articles() {
         return postService.getAllArticles();
     }
 
+    // Aa a reference, read: https://www.javadevjournal.com/spring/spring-request-response-body/
     @PostMapping(value = "/article")
     public void publishedArticle(@RequestBody Article article) {
         postService.insert(article);
