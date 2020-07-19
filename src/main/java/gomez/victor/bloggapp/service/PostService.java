@@ -20,4 +20,13 @@ public class PostService {
     public void insert(Article article) {
         articleRepository.save(article);
     }
+
+    public Article getArticle(Long id) {
+        return articleRepository.findOne(id);
+    }
+
+    public Article find(Long postId) {
+        return articleRepository.findOne(postId);
+    }
+
 }
