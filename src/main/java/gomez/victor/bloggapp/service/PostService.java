@@ -25,8 +25,4 @@ public class PostService {
         return articleRepository.findOne(id);
     }
 
-    public Article findArticleId(Long postId) {
-        return articleRepository.findOne(postId);
-    }
-
 }
