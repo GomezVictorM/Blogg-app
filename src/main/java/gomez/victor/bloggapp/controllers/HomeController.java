@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping(value="/")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @GetMapping(value="article/{id}")
-    public String singleArticle(){
+    public String singleArticle() {
         return "article";
     }
 }
