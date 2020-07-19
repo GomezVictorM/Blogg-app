@@ -13,12 +13,20 @@ public class PostService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Article> getAllArticles(){
+    public List<Article> getAllArticles() {
         return articleRepository.findAll();
     }
 
     public void insert(Article article) {
         articleRepository.save(article);
+    }
+
+    public boolean deletePost(Long Id){
+        Article thePost = articleRepository.findOne(Id);
+        if(thePost == null)
+            return false;
+        articleRepository.delete(Id);
+        return true;
     }
 
     public Article getArticle(Long id) {
