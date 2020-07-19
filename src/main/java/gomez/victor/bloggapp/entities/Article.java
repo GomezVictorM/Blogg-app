@@ -1,15 +1,7 @@
 package gomez.victor.bloggapp.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.Date;
-
-
-// Article = {
-//  title: String,
-//  content: String,
-//  published: Long
-//}
-
 
 @Entity
 public class Article {
@@ -20,17 +12,13 @@ public class Article {
 
     private String title;
     private String content;
-    private Date published;
+    private Date published_date;
 
     public Article() {
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -49,11 +37,11 @@ public class Article {
         this.content = content;
     }
 
-    public Date getPublished() {
-        return published;
+    public Date getPublished_date() {
+        return published_date;
     }
 
-    public void setPublished(Date published) {
-        this.published = published;
+    public void setPublished_date(Date published_date) {
+        this.published_date = published_date;
     }
 }
