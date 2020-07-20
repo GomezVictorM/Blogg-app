@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 // As a reference https://spring.io/guides/gs/accessing-data-jpa/
 // http://zetcode.com/spring/getmapping/
@@ -23,7 +24,7 @@ public class BlogController {
     }
 
     @GetMapping(value="/the_post/{id}")
-    public Article getPostById(@PathVariable Long id){
+    public Optional<Article> getPostById(@PathVariable Long id){
         return postService.getArticle(id);
     }
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PostService {
@@ -22,15 +23,15 @@ public class PostService {
     }
 
     public boolean deletePost(Long Id){
-        Article thePost = articleRepository.findOne(Id);
+        Optional<Article> thePost = articleRepository.findById(Id);
         if(thePost == null)
             return false;
-        articleRepository.delete(Id);
+        articleRepository.deleteById(Id);
         return true;
     }
 
-    public Article getArticle(Long id) {
-        return articleRepository.findOne(id);
+    public Optional<Article> getArticle(Long id) {
+        return articleRepository.findById(id);
     }
 
 }
