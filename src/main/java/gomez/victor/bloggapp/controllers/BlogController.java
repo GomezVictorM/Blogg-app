@@ -5,6 +5,7 @@ import gomez.victor.bloggapp.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,10 +29,16 @@ public class BlogController {
         return postService.getArticle(id);
     }
 
-    // Aa a reference, read: https://www.javadevjournal.com/spring/spring-request-response-body/
+    // As a reference, read: https://www.javadevjournal.com/spring/spring-request-response-body/
     @PostMapping(value = "/article")
-    public void publishedArticle(@RequestBody Article article) {
+    public String publishedArticle(@RequestBody Article article) {
+        if(article.getPublishedDate() == null)
+            article.setPublishedDate(new Date());
         postService.insert(article);
+        return "Article was published";
     }
 
+    public boolean deletePost(@PathVariable long id) {
+        return postService.deletePost(id);
+    }
 }

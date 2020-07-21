@@ -37,11 +37,11 @@ public class Article {
         this.content = content;
     }
 
-    public Date getPublished_date() {
+    public Date getPublishedDate() {
         return published_date;
     }
 
-    public void setPublished_date(Date published_date) {
+    public void setPublishedDate(Date published_date) {
         this.published_date = published_date;
     }
 }
