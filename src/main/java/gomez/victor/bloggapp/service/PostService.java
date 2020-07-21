@@ -15,24 +15,24 @@ public class PostService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Article> getAllArticles() {
-        return articleRepository.findAll();
-    }
+    public List<Article> getAllArticles() { return articleRepository.findAll(); }
 
     public void insert(Article article) {
         articleRepository.save(article);
     }
 
-    public boolean deletePost(Long Id){
-        Optional<Article> thePost = articleRepository.findById(Id);
+    public boolean deletePost(Long postId){
+        Optional<Article> thePost = articleRepository.findById(postId);
         if(thePost == null)
             return false;
-        articleRepository.deleteById(Id);
+        articleRepository.deleteById(postId);
         return true;
     }
 
-    public Optional<Article> getArticle(Long id) {
+    public Article getArticle(Long id) {
         return articleRepository.findById(id);
     }
+
+    //public Article find(Long postId) { return articleRepository.findArticleId(postId); }
 
 }
