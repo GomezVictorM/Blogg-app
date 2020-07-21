@@ -29,10 +29,6 @@ public class BlogController {
         return postService.getArticle(id);
     }
 
-    public boolean deletePost(@PathVariable long id) {
-        return postService.deletePost(id);
-    }
-
     // As a reference, read: https://www.javadevjournal.com/spring/spring-request-response-body/
     @PostMapping(value = "/article")
     public String publishedArticle(@RequestBody Article article) {
@@ -40,6 +36,10 @@ public class BlogController {
             article.setPublishedDate(new Date());
         postService.insert(article);
         return "Article was published";
+    }
+
+    public boolean deletePost(@PathVariable long id) {
+        return postService.deletePost(id);
     }
 
 }

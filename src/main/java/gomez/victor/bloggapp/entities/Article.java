@@ -12,7 +12,7 @@ public class Article {
 
     private String title;
     private String content;
-    private Date published_date;
+    private Date publishedDate;
 
     public Article() {
     }
@@ -38,10 +38,10 @@ public class Article {
     }
 
     public Date getPublishedDate() {
-        return published_date;
+        return publishedDate;
     }
 
     public void setPublishedDate(Date published_date) {
-        this.published_date = published_date;
+        this.publishedDate = published_date;
     }
 }
