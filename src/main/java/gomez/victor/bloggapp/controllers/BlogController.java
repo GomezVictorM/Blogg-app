@@ -14,19 +14,20 @@ import java.util.Optional;
 // https://www.tutorialspoint.com/spring/spring_autowired_annotation.htm
 
 @RestController
+@RequestMapping("/rest")
 public class BlogController {
 
     @Autowired
     PostService postService;
 
-    @GetMapping(value = "/articles")
+    @GetMapping("/articles")
     public List<Article> articles() {
         return postService.getAllArticles();
     }
 
-    @GetMapping(value="/the_post/{id}")
-    public Optional<Article> getPostById(@PathVariable Long id){
-        return postService.getArticle(id);
+    @GetMapping("/the_article/{articleId}")
+    public Optional<Article> getPostById(@PathVariable Long articleId){
+        return postService.getArticle(articleId);
     }
 
     // As a reference, read: https://www.javadevjournal.com/spring/spring-request-response-body/
@@ -38,6 +39,7 @@ public class BlogController {
         return "Article was published";
     }
 
+    @DeleteMapping
     public boolean deletePost(@PathVariable long id) {
         return postService.deletePost(id);
     }
