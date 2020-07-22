@@ -17,7 +17,7 @@ import java.util.Optional;
 public class BlogController {
 
     @Autowired
-    private PostService postService;
+    PostService postService;
 
     @GetMapping(value = "/articles")
     public List<Article> articles() {
