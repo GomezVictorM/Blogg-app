@@ -1,7 +1,7 @@
 package gomez.victor.bloggapp.controllers;
 
 import gomez.victor.bloggapp.entities.Article;
-import gomez.victor.bloggapp.service.PostService;
+import gomez.victor.bloggapp.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class BlogController {
 
     @Autowired
-    PostService postService;
+    ArticleService postService;
 
     @GetMapping("/articles")
     public List<Article> articles() {
