@@ -3,7 +3,6 @@ package gomez.victor.bloggapp.service;
 import gomez.victor.bloggapp.entities.Article;
 import gomez.victor.bloggapp.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class PostService {
         return true;
     }
 
-    public Article getArticle(Long id) {
+    public Optional<Article> getArticle(Long id) {
         return articleRepository.findById(id);
     }
 
