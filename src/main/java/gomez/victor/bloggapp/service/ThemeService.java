@@ -1,7 +1,7 @@
 package gomez.victor.bloggapp.service;
 
 import gomez.victor.bloggapp.entities.Theme;
-import gomez.victor.bloggapp.repositories.ThemeRepo;
+import gomez.victor.bloggapp.repositories.ThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ThemeService {
 
     @Autowired
-    private ThemeRepo themeRepo;
+    private ThemeRepository themeRepo;
 
     public List<Theme> findAllThemes() {
         List<Theme> themes = (List<Theme>) themeRepo.findAll();
