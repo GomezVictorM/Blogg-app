@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap");
+
+/*------------------
+    Major Content
+-------------------*/
+
+* {
+	box-sizing: border-box;
+	color: rgb(223, 219, 219);
+	font-family: 'Cabin', sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	color: black;
+	background-color: rgb(241, 237, 237);
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+/*-------------
+    navbar
+---------------*/
+
+nav {
+	display: flex;
+	align-items: center;
+	height: 7vh;
+	background-color: rgb(14, 13, 22);
+}
+
+nav a {
+	padding: 9px 15px 9px 15px;
+	text-align: center;
+}
+
+nav a:hover {
+	background-color: rgb(28, 26, 55);
+}
+
+/* -------------------------
+    Signup page + Home page
+--------------------------- */
+.home-container {
+	display: flex;
+	flex-direction: column;
+	height: 93vh;
+	width: 100;
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(28, 26, 55);
+	padding: 30px;
+	height: 90%;
+	margin: 0;
+}
+
+.submit-div {
+	display: flex;
+	flex-direction: row;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(14, 13, 22);
+	height: 10%;
+	margin: 0;
+}
+
+.button {
+	border: 1px solid rgb(104, 102, 102);
+	border-radius: 5px;
+	background: none;
+	padding: 10px 30px;
+	margin: 10px 5px;
+	font-size: 1em;
+}
+
+.button:hover {
+	background-color: #34343b;
+}
+
+.home div h1 {
+	font-size: 2.7em;
+}
+
+.sign-up-form {
+	display: flex;
+	flex-direction: column;
+	height: 70%;
+}
+
+.sign-up-form input,
+.normal-input {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.sign-up-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sign-up-text h2 {
+	font-size: 2em;
+	margin: 0px 0px 0px 0px;
+}
+
+.take-space-div {
+	height: 150px;
+}
+
+.login-text {
+	padding-bottom: 20px;
+}
+
+.input-with-margin {
+	margin-left: 3px;
+}
+
+/* ------------
+    ChatApp
+------------- */
+
+.blog-app-cover-div {
+    display: flex;
+    flex-direction: row;
+    height: 93vh;
+    width: 100%;
+    background-color: #26262c;
+}
+
+.article-component-div {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.theme-box-div {
+    width: 15%;
+    background-color: #212126;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.article-box-div {
+    height: 82%;
+    overflow: auto;
+}
+
+.post-article-form {
+    height: 18%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 25px;
+}
+
+.post-article-textarea, .post-article-button {
+    height: 100%;
+    outline: none;
+    border: none;
+}
+
+.post-article-textarea {
+    font-size: 1em;
+    width: 90%;
+    background-color: #303036;
+    border-radius: 10px 0px 0px 10px;
+    resize: none;
+    padding: 10px;
+}
+
+.post-article-button {
+    width: 10%;
+    background-color: #303036;
+    margin-left: 1px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+/* --------------
+    Message Box
+----------------*/
+
+.article-div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.inner-article-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.inner-article-div p {
+    margin: 0px;
+}
+
+.article-p {
+    color: rgb(197, 191, 191);
+    margin: 0px 0px 10px 0px;
+    font-size: 1em;
+}
+
+.article-name {
+    line-height: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 5px 5px 5px 0px;
+}
+
+.article-date {
+    line-height: 1em;
+    color: rgb(150, 148, 148);
+    font-size: 0.8em;
+    font-weight: 100;
+    vertical-align: bottom;
+    padding: 10px 10px 10px 10px;
+}
+
+.delete-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.create-new-theme {
+	width: 70%;
+	background-color: #303036;
+	padding: 15px;
+}
+.createButton {
+	border-radius: 4px;
+	background-color: gray;
+}
+.createButton:hover {
+	background-color: rgb(6, 5, 24);
+}
+
+.remove-user-button {
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*
+    Other
+*/
+
+.theme-name-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thema-name-div h3 {
+    display: flex;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.join-button {
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+
+.theme-name-div h4 {
+    margin: 7px 0px;
+}
