@@ -98,11 +98,11 @@ public class UserService {
 
     //Needs to retrieve admin also later.
     public User addThemeToCurrentUser(User user) {
-        List<UserThemeRel> foundUserThemes = userThemeRepo.findByUserId(user.getId());
-        ArrayList<Themes> themes = new ArrayList<>();
+        List<UserThemeRel> foundUserThemes = userThemeRelRepo.findByUserId(user.getId());
+        ArrayList<Theme> themes = new ArrayList<>();
         //List<Channel> channels = null;
         for (UserThemeRel foundUserTheme : foundUserThemes) {
-            themes.add(themeRepo.findById(foundUserTheme.getChannelId()));
+            themes.add(themeRepository.findById(foundUserTheme.getThemeId()));
         }
         user.setListOfThemes(themes);
         return user;
@@ -120,7 +120,7 @@ public class UserService {
         ArrayList<Theme> otherThemes = new ArrayList<>();
 
         SQLQuery query = this.getSession()
-                .createSQLQuery("SELECT id, title, admin_id from channels WHERE NOT EXISTS (SELECT 'm' FROM user_channel_rel where user_channel_rel.channel_id = channels.id and user_channel_rel.user_id = ?)")
+                .createSQLQuery("SELECT id, title, admin_id from themes WHERE NOT EXISTS (SELECT 'm' FROM user_theme_rel where user_theme_rel.channel_id = themes.id and user_theme_rel.user_id = ?)")
                 .setParameter(1, user.getId());
 
         List<Object[]> rows = query.list();
