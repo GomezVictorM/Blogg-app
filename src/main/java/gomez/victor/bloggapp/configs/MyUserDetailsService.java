@@ -43,6 +43,4 @@ public class MyUserDetailsService implements UserDetailsService {
                 .password(user.getPassword())
                 .roles("USER").build();
     }
-}@Configuration
-public class MyUserDetailsService implements UserDetailsService {
 }

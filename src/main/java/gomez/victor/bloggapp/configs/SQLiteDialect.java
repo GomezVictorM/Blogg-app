@@ -95,7 +95,7 @@ public class SQLiteDialect extends Dialect {
     }
 
     public String getCurrentTimestampSelectString() {
-        return "select current_timestamp";
+        return "SELECT current_timestamp";
     }
 
     public boolean supportsUnionAll() {
