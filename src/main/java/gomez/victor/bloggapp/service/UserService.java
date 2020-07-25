@@ -22,13 +22,13 @@ public class UserService {
     private MyUserDetailsService myUserDetailsService;
 
     @Autowired
-    private UserChannelRelRepo userChannelRelRepo;
+    private UserThemeRelRepo userThemeRelRepo;
 
     @Autowired
     private SocketService socketService;
 
     @Autowired
-    private ChannelRepo channelRepo;
+    private ThemeRepo themeRepo;
 
     //@Autowired
     //private FriendRepo friendRepo;
@@ -67,7 +67,7 @@ public class UserService {
         User user = null;
 
         try {
-            user = userRepo.findAllByUsernameAndPassword(username, password);
+            user = userRepo.findAllByUserNameAndPassword(username, password);
             System.out.println(user.getLastName());
         } catch (Exception e) {
             e.printStackTrace();
