@@ -1,11 +1,10 @@
-package gomez.victor.bloggapp.entities;
+package gomez.victor.bloggapp.service;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user_theme_rel")
-public class UserThemeRel {
-
+public class UserThemeRelService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
@@ -31,11 +30,12 @@ public class UserThemeRel {
         this.userId = userId;
     }
 
-    public int getChannelId() {
+    public int getThemeId() {
         return themeId;
     }
 
-    public void setChannelId(int channelId) {
-        this.themeId = channelId;
+    public void setThemeId(int themeId) {
+        this.themeId = themeId;
     }
+
 }
