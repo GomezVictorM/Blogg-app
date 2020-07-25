@@ -3,7 +3,7 @@ package gomez.victor.bloggapp.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Temas")
+@Table(name = "themes")
 public class Theme {
 
     @Id
