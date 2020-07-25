@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-public class MyUserDetailsService implements UserDetailsService {
+public class MyUserDetailsConfig implements UserDetailsService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     public BCryptPasswordEncoder getEncoder() { return encoder; }

@@ -1,8 +1,7 @@
 package gomez.victor.bloggapp.service;
 
-import gomez.victor.bloggapp.configs.MyUserDetailsService;
+import gomez.victor.bloggapp.configs.MyUserDetailsConfig;
 import gomez.victor.bloggapp.entities.Theme;
-import gomez.victor.bloggapp.entities.UserTheme;
 import gomez.victor.bloggapp.entities.UserThemeRel;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -19,7 +18,7 @@ public class UserService {
     private UserRepo userRepo;
 
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private MyUserDetailsConfig myUserDetailsConfig;
 
     @Autowired
     private UserThemeRelRepo userThemeRelRepo;
@@ -89,7 +88,7 @@ public class UserService {
         return user;
     }
     public User registerUser(User user) {
-        return myUserDetailsService.addUser(user.getUsername(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName());
+        return myUserDetailsConfig.addUser(user.getUsername(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName());
     }
 
     //Needs to retrieve admin also later.
