@@ -1,13 +1,15 @@
 package gomez.victor.bloggapp.controllers;
 
-import gomez.victor.bloggapp.entities.Socket;
+import com.google.gson.Gson;
 import gomez.victor.bloggapp.service.ArticleService;
 import gomez.victor.bloggapp.service.SocketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.socket.CloseStatus;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-import javax.websocket.Encoder;
 import java.io.IOException;
 
 @Controller

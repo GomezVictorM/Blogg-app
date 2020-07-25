@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 @Configuration
-class MyWebMvcConfigurer implements WebMvcConfigurer {
+class MyWebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

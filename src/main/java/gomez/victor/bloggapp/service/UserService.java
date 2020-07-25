@@ -2,10 +2,15 @@ package gomez.victor.bloggapp.service;
 
 import gomez.victor.bloggapp.configs.MyUserDetailsConfig;
 import gomez.victor.bloggapp.entities.Theme;
+import gomez.victor.bloggapp.entities.User;
 import gomez.victor.bloggapp.entities.UserThemeRel;
+import gomez.victor.bloggapp.repositories.ThemeRepository;
+import gomez.victor.bloggapp.repositories.UserThemeRelRepository;
+import gomez.victor.bloggapp.repositories.UserRepo;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -21,13 +26,13 @@ public class UserService {
     private MyUserDetailsConfig myUserDetailsConfig;
 
     @Autowired
-    private UserThemeRelRepo userThemeRelRepo;
+    private UserThemeRelRepository userThemeRelRepo;
 
     @Autowired
     private SocketService socketService;
 
     @Autowired
-    private ThemeRepo themeRepo;
+    private ThemeRepository themeRepository;
 
     //@Autowired
     //private FriendRepo friendRepo;
