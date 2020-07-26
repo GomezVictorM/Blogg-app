@@ -56,7 +56,7 @@ public class ArticleService {
 
             Integer theme_id = article.getThemeId();
             if (theme_id != null) {
-                Theme theme = themeRepository.findById((int) theme_id);
+                Theme theme = themeRepository.findByID((int) theme_id);
                 article.setTheme(theme);
             }
         });

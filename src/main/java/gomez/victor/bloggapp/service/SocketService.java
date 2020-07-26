@@ -14,7 +14,7 @@ public class SocketService {
 
     Gson gson = new Gson();
 
-    private List<WebSocketSession> session = new CopyOnWriteArrayList<>();
+    private List<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
 
     public void sendToOne(WebSocketSession webSocketSession, String message) throws IOException {
         webSocketSession.sendMessage(new TextMessage(message));

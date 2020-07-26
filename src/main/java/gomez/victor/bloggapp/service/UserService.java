@@ -95,7 +95,7 @@ public class UserService {
         List<UserThemeRel> foundUserThemes = userThemeRelRepo.findByUserId(user.getId());
         ArrayList<Theme> themes = new ArrayList<>();
         for (UserThemeRel foundUserTheme : foundUserThemes) {
-            themes.add(themeRepository.findById(foundUserTheme.getThemeId()));
+            themes.add(themeRepository.findByID(foundUserTheme.getThemeId()));
         }
         user.setListOfThemes(themes);
         return user;
