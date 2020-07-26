@@ -6,7 +6,7 @@ import gomez.victor.bloggapp.entities.User;
 import gomez.victor.bloggapp.entities.UserThemeRel;
 import gomez.victor.bloggapp.repositories.ThemeRepository;
 import gomez.victor.bloggapp.repositories.UserThemeRelRepository;
-import gomez.victor.bloggapp.repositories.UserRepo;
+import gomez.victor.bloggapp.repositories.UserRepository;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Autowired
     private MyUserDetailsConfig myUserDetailsConfig;
@@ -38,13 +38,13 @@ public class UserService {
     //private FriendRepo friendRepo;
 
     public List<User> findAllUsers() {
-        List<User> users = (List<User>) userRepo.findAll();
+        List<User> users = (List<User>) userRepository.findAll();
 
         return users;
     }
 
     public User findOneUser(int id) {
-        User user = userRepo.findById(id);
+        User user = userRepository.findById(id);
         if (user == null) return null;
 
         // Load user channels
@@ -58,7 +58,7 @@ public class UserService {
     public User createNewUser(User user) {
         User dbUser = null;
         try {
-            dbUser = userRepo.save(user);
+            dbUser = userRepository.save(user);
             dbUser.action = "new-user";
             socketService.sendToAll(dbUser, User.class);
         } catch (Exception e) {
@@ -71,7 +71,7 @@ public class UserService {
         User user = null;
 
         try {
-            user = userRepo.findAllByUsernameAndPassword(username, password);
+            user = userRepository.findAllByUsernameAndPassword(username, password);
             System.out.println(user.getLastName());
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class UserService {
         // the login session is stored between page reloads,
         // and we can access the current authenticated user with this
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepo.findByUsername(username);
+        User user = userRepository.findByUsername(username);
         try {
             user = addThemeToCurrentUser(user);
             user = addOtherThemeToCurrentUser(user);

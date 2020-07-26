@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private MyUserDetailsConfig myUserDetailsConfig;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(myUserDetailsService)
-                .passwordEncoder(myUserDetailsService.getEncoder());
+                .userDetailsService(myUserDetailsConfig)
+                .passwordEncoder(myUserDetailsConfig.getEncoder());
     }
 }

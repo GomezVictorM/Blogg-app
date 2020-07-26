@@ -1,5 +1,8 @@
 package gomez.victor.bloggapp.configs;
 
+
+import gomez.victor.bloggapp.entities.User;
+import gomez.victor.bloggapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,11 +17,11 @@ public class MyUserDetailsConfig implements UserDetailsService {
     public BCryptPasswordEncoder getEncoder() { return encoder; }
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUsername(username);
+        User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found by name: " + username);
         }
@@ -28,7 +31,7 @@ public class MyUserDetailsConfig implements UserDetailsService {
     public User addUser(String username, String password, String email, String firstName, String lastName){
         User user = new User(username, encoder.encode(password), email, firstName, lastName, true);
         try {
-            return userRepo.save(user);
+            return userRepository.save(user);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
