@@ -26,8 +26,8 @@ public class ArticleController {
     }
 
     @PostMapping("/articles")
-    public Article sendOneMessage(@RequestBody Article message) {
-        return articleService.postArticle(message);
+    public Article sendOneMessage(@RequestBody Article article) {
+        return articleService.postArticle(article);
     }
 
     @DeleteMapping("/articles/{id}")

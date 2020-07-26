@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ArticleRepository extends JpaRepository <Article, Long> {
-    default List<Article> findArticleId(Long id) {
-        return null;
-    }
+public interface ArticleRepository extends JpaRepository <Article, Integer> {
+    public Article findById(int id);
+    public List<Article> findByArticleId(int channelId);
 }
