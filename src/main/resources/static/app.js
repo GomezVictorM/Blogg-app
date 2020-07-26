@@ -3,7 +3,7 @@ export default {
       <div id="app">
         <nav>
           <router-link to="/">Home</router-link>
-          <router-link to="/blogapp">Chat App</router-link>
+          <router-link to="/blog_app">Blog App</router-link>
         </nav>
 
         <main>
@@ -11,9 +11,8 @@ export default {
         </main>
       </div>
     `,
-    //kollar om där finns en användare inloggad vid omstart
     async created() {
-      let user = await fetch('/auth/whoami')
+      let user = await fetch('/auth/whoAmI')
 
       try {
         user = await user.json()

@@ -64,7 +64,7 @@ public class UserService {
         User user = null;
 
         try {
-            user = userRepository.findAllByUsernameAndPassword(username, password);
+            user = userRepository.findAllByUserNameAndPassword(username, password);
             System.out.println(user.getLastName());
         } catch (Exception e) {
             e.printStackTrace();

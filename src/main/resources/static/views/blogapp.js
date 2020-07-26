@@ -1,7 +1,7 @@
-import sendMessageComponent from "../components/postArticleComponent.js";
-import messageBox from "../components/articleBox.js";
-import channelBoxComponent from "../components/themeBoxComponent.js";
-import channelList from "../components/themeList.js";
+import postArticleComponent from "../components/postArticleComponent.js";
+import articleBox from "../components/articleBox.js";
+import themeBoxComponent from "../components/themeBoxComponent.js";
+import themeList from "../components/themeList.js";
 
 export default {
 	components: {

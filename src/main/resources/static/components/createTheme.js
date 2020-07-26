@@ -22,13 +22,13 @@ export default {
 	methods: {
 		async createNewTheme() {
 			if (this.title != "") {
-				let newChannel = {
+				let newTheme = {
 					title: this.title,
 					admin_id: this.$store.state.currentUser.id
 				};
 
 				try {
-					let channel = await fetch("/rest/themes", {
+					let theme = await fetch("/rest/themes", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"

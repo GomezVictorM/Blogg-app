@@ -23,7 +23,7 @@ export const router = new VueRouter({
     {
       name: "logapp",
       path: '/logapp',
-      component: chatapp
+      component: blogapp
     },
     {
       name: "signup",

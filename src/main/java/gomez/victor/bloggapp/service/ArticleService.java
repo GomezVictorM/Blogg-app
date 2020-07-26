@@ -89,7 +89,7 @@ public class ArticleService {
     }
 
     public List<Article> findArticleByThemeId(int themeId) {
-        List<Article> articles = articleRepository.findByArticleId(themeId);
+        List<Article> articles = articleRepository.findByThemeId(themeId);
         addSenderName(articles);
 
         for (Article article: articles){

@@ -2,7 +2,7 @@ export default {
     template: `
         <div class="article-box-div">
             <h2>Theme: <span style="color: grey;">{{showThemeName}}</span></h2>
-            <div v-for="article in showarticles" class="article-div" :hover="true">
+            <div v-for="article in show articles" class="article-div" :hover="true">
                 <span class="inner-article-div">
                     <p class="article-name">{{article.senderName}}</p>
                     <p class="article-date">{{article.articleDate}}</p>

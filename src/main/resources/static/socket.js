@@ -18,7 +18,6 @@ function connect() {
       showSomething(e.data);
     }
     ws.onopen = (e) => {
-        //sendSomething();
         isConnected = true;
     };
 

@@ -2,7 +2,7 @@ export default {
     template: `
 
         <form @submit.prevent="postNewArticle" class="post-article-form">
-            <textarea v-model="article" class="post-article-textarea" placeholder="Post a new article..."></textarea>
+            <textarea v-model="article" class="post-article-text area" placeholder="Post a new article..."></textarea>
             <button class="post-article-button">Send</button>
         </form>
     `,
@@ -18,11 +18,11 @@ export default {
             let newArticle = {
                 articleDate: dateTime, //Fixed?
                 article: this.article,
-                read: false, //Remove in database, backend and here later if no time left.
-                senderId: this.$store.state.currentUser.id, // Fixed?
-                themeId: this.$store.state.currentTheme.id, // Fixed?
+                read: false,
+                senderId: this.$store.state.currentUser.id,
+                themeId: this.$store.state.currentTheme.id,
                 receiverId: null, //fix
-                direct: false // Change later? remove?
+                direct: false
             }
 
             let response = await fetch('/rest/articles', {
@@ -38,7 +38,7 @@ export default {
         },
         getDateTime() {
             let newArticleDate = new Date();
-            //Collects all timestamps in an array
+            //Collects timestamps in an array here
             let newDateTimeFormat = [
                 newArticleDate.getFullYear()+'',
                 newArticleDate.getMonth()+1+'',
@@ -48,7 +48,7 @@ export default {
                 newArticleDate.getSeconds()+''
             ]
             let dateTime = '';
-            //Builds the right time format and add 0 to single digit numbers
+            //Time format here
             for (let i = 0; i < newDateTimeFormat.length; i++) {
                 dateTime += newDateTimeFormat[i].length === 1 ? "0" + newDateTimeFormat[i] : newDateTimeFormat[i]
                 if(i >= 0 && i < 2) {

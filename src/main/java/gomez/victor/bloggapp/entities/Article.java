@@ -9,6 +9,7 @@ import java.util.Date;
 @Table(name = "messages")
 public class Article {
 
+    public String action;
     @Transient
     private User sender;
 

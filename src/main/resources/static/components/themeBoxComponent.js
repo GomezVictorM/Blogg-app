@@ -38,13 +38,13 @@ export default {
             response = await response.json()
             this.$store.commit('setCurrentThemeArticles', response)
         },
-        async onClickLeaveChannel(i) {
+        async onClickLeaveTheme(i) {
             let userThemeRelation = {
                 userId: this.$store.state.currentUser.id,
                 channelId: this.$store.state.currentUser.listOfThemes[i].id
             }
-            console.log(userChannelRelation.userId)
-            console.log(userChannelRelation.channelId)
+            console.log(userThemeRelation.userId)
+            console.log(userThemeRelation.themeId)
             let response = await fetch('/rest/relation', {
                 method: 'DELETE',
                 headers: {

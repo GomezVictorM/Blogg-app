@@ -22,7 +22,7 @@ export default {
             email: '',
             username: '',
             password: '',
-            h3Text: 'Please fill in this form to create an account'
+            h3Text: 'Fill in this form to create an account'
         }
     },
     methods: {
