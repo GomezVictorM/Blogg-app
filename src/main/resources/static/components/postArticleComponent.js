@@ -3,7 +3,7 @@ export default {
 
         <form @submit.prevent="postNewArticle" class="post-article-form">
             <textarea v-model="article" class="post-article-text area" placeholder="Post a new article..."></textarea>
-            <button class="post-article-button">Send</button>
+            <button class="post-article-button">Post Article</button>
         </form>
     `,
     data() {

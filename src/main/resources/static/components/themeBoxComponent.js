@@ -6,7 +6,7 @@ export default {
     },
     template: `
         <div class="theme-box-div">
-            <h2>Channels</h2>
+            <h2>Themes</h2>
             <div v-for="(userTheme, i) in userThemes" :key="userTheme.id" class="theme-name-div">
                 <h3 @click="onClick(i)">{{userTheme.title}}</h3>
                 <button @click="onClickLeaveTheme(i)" class="delete-button">🗑️</button>
