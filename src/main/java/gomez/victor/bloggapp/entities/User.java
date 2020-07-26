@@ -28,7 +28,7 @@ public class User {
     @Transient
     private ArrayList<Theme> otherThemes;
 
-    public void setOtherChannels(ArrayList<Theme> otherChannels){
+    public void setOtherThemes(ArrayList<Theme> otherThemes){
         this.otherThemes = otherThemes;
     }
 

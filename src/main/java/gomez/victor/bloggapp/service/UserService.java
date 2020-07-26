@@ -34,8 +34,6 @@ public class UserService {
     @Autowired
     private ThemeRepository themeRepository;
 
-    //@Autowired
-    //private FriendRepo friendRepo;
 
     public List<User> findAllUsers() {
         List<User> users = (List<User>) userRepository.findAll();
@@ -46,11 +44,6 @@ public class UserService {
     public User findOneUser(int id) {
         User user = userRepository.findById(id);
         if (user == null) return null;
-
-        // Load user channels
-        //List<UserChannel> userChannels = userChannelRepo.findByUserId(user.getId());
-        //user.setUserChannels(userChannels);
-
 
         return user;
     }
@@ -98,16 +91,15 @@ public class UserService {
         return myUserDetailsConfig.addUser(user.getUsername(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName());
     }
 
-    //Needs to retrieve admin also later.
     public User addThemeToCurrentUser(User user) {
         List<UserThemeRel> foundUserThemes = userThemeRelRepo.findByUserId(user.getId());
         ArrayList<Theme> themes = new ArrayList<>();
-        //List<Theme> Themes = null;
         for (UserThemeRel foundUserTheme : foundUserThemes) {
             themes.add(themeRepository.findById(foundUserTheme.getThemeId()));
         }
         user.setListOfThemes(themes);
         return user;
+
     }
 
     @Autowired

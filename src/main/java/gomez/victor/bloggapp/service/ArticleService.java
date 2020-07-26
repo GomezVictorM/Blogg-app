@@ -77,11 +77,11 @@ public class ArticleService {
         Integer theme_id = article.getThemeId();
         Theme theme;
         if (theme_id != null) {
-            theme = themeRepository.findById((int) theme_id);
+            theme = themeRepository.findByID((int) theme_id);
         } else {
             theme = new Theme();
             theme.setId(0);
-            theme.setTitle("Public Channel");
+            theme.setTitle("Public Theme");
         }
         article.setTheme(theme);
 
@@ -121,7 +121,7 @@ public class ArticleService {
         Article dbArticle = null;
         try {
             dbArticle = articleRepository.save(newArticle);
-            dbArticle.action = "delete-message";
+            dbArticle.action = "delete-article";
             socketService.sendToAll(dbArticle, Article.class);
         } catch(Exception e) {
             e.printStackTrace();

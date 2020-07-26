@@ -22,7 +22,7 @@ public class ArticleController {
 
     @GetMapping("/articles/{themeId}")
     public List<Article> getArticlesByThemeId(@PathVariable int themeId) {
-        return articleService.findArticlesByThemeId(articleId);
+        return articleService.findArticleByThemeId(themeId);
     }
 
     @PostMapping("/articles")

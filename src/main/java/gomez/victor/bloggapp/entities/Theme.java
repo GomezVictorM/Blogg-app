@@ -1,14 +1,13 @@
 package gomez.victor.bloggapp.entities;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "themes")
 public class Theme {
 
     @Id
-    @GeneratedValue(Strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private int admin_id;
