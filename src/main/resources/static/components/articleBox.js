@@ -9,7 +9,7 @@ export default {
                     <button v-if="checkDeleteArticle(article.senderId)" @click="onClick(article.id)" class="delete-button">🗑️</button>
                     <button v-if="checkIfAdmin()" @click="removeUser(article.senderId)" class="remove-user-button">Remove User</button>
                 </span>
-                <p class="article-p">{{message.message}}</p>
+                <p class="article-p">{{article.article}}</p>
             </div>
         </div>
     `,
