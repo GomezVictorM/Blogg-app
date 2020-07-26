@@ -25,10 +25,10 @@ export const store = new Vuex.Store({
 		removeThemeFromUser(state, index) {
 			state.currentUser.listOfThemes.splice(index, 1);
     },
-    addToCurrentChannelMessages(state, message) {
-      console.log(state.currentChannelMessages)
-      state.currentChannelMessages.push(message)
-      console.log(state.currentChannelMessages)
+    addToCurrentThemeArticles(state, articles) {
+      console.log(state.currentThemeArticles)
+      state.currentThemeArticles.push(article)
+      console.log(state.currentThemeArticles)
     },
 	},
 	actions: {},
