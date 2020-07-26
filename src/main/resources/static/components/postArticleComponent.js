@@ -2,7 +2,7 @@ export default {
     template: `
 
         <form @submit.prevent="postNewArticle" class="post-article-form">
-            <textarea v-model="article" class="post-article-text area" placeholder="Post a new article..."></textarea>
+            <textarea v-model="article" class="post-article-textarea" placeholder="Post a new article..."></textarea>
             <button class="post-article-button">Post Article</button>
         </form>
     `,

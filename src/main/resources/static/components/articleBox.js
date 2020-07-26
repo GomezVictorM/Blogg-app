@@ -40,7 +40,7 @@ export default {
                 method: 'Delete'
             })
         },
-        checkDeleteMessage(senderId) {
+        checkDeleteArticle(senderId) {
             if(senderId === this.$store.state.currentUser.id || this.$store.state.currentTheme.admin_id === this.$store.state.currentUser.id) {
                 return true
             } else {
@@ -50,7 +50,7 @@ export default {
         async removeUser(senderId) {
             let userThemeRelation = {
                 userId: senderId,
-                channelId: this.$store.state.currentTheme.id
+                themeId: this.$store.state.currentTheme.id
             }
             let response = await fetch('/rest/relation', {
                 method: 'DELETE',

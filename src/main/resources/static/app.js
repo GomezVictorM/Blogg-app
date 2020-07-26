@@ -2,8 +2,8 @@ export default {
     template: `
       <div id="app">
         <nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/blog_app">Blog App</router-link>
+          <router-link to="/"> Home 🏠</router-link>
+          <router-link to="/blog_app">Blog App ✏️</router-link>
         </nav>
 
         <main>

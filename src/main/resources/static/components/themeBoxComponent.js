@@ -1,4 +1,4 @@
-import createChannel from './createTheme.js'
+import createTheme from './createTheme.js'
 
 export default {
     components: {
@@ -33,7 +33,7 @@ export default {
     methods: {
         async onClick(i) {
             this.$store.commit('setCurrentTheme', this.$store.state.currentUser.listOfThemes[i])
-            let channelId = this.$store.state.currentChannel.id
+            let channelId = this.$store.state.setCurrentTheme.id
             let response = await fetch('/rest/articles/' + themeId)
             response = await response.json()
             this.$store.commit('setCurrentThemeArticles', response)
