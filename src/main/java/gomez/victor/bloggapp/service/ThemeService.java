@@ -19,7 +19,7 @@ public class ThemeService {
     }
 
     public Theme findOneTheme(int id) {
-        Theme theme = themeRepo.findByID(id);
+        Theme theme = themeRepo.findById(id);
         if (theme == null) return null;
 
         return theme;

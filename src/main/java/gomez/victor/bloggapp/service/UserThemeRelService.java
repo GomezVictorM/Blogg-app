@@ -10,8 +10,9 @@ public class UserThemeRelService {
     @Autowired
     UserThemeRelRepository userThemeRelRepository;
 
-    public void deleteRelation(int userId, int channelId) {
-        userThemeRelRepository.deleteByUserIdAndChannelId(userId, channelId);
+
+    public void deleteRelation(int userId, int themeId) {
+        userThemeRelRepository.deleteByUserIdAndThemeId(userId, themeId);
     }
 
     public UserThemeRel postRelation(UserThemeRel userThemeRel) {

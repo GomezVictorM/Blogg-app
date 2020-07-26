@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface UserThemeRelRepository extends CrudRepository<UserThemeRel, Integer> {
     public List<UserThemeRel> findByUserId(int userId);
-    public void deleteByUserIdAndChannelId(@Param("userId") int userId, @Param("themeId") int themeId);
+    public void deleteByUserIdAndThemeId(@Param("userId") int userId, @Param("themeId") int themeId);
 }

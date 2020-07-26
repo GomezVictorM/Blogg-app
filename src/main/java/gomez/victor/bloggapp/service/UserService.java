@@ -64,7 +64,7 @@ public class UserService {
         User user = null;
 
         try {
-            user = userRepository.findAllByUserNameAndPassword(username, password);
+            user = userRepository.findAllByUsernameAndPassword(username, password);
             System.out.println(user.getLastName());
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,7 +95,7 @@ public class UserService {
         List<UserThemeRel> foundUserThemes = userThemeRelRepo.findByUserId(user.getId());
         ArrayList<Theme> themes = new ArrayList<>();
         for (UserThemeRel foundUserTheme : foundUserThemes) {
-            themes.add(themeRepository.findByID(foundUserTheme.getThemeId()));
+            themes.add(themeRepository.findById(foundUserTheme.getThemeId()));
         }
         user.setListOfThemes(themes);
         return user;
