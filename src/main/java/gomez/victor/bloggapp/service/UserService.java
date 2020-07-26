@@ -55,7 +55,7 @@ public class UserService {
         return user;
     }
 
-    public User createNewUser (User user){
+    public User createNewUser(User user) {
         User dbUser = null;
         try {
             dbUser = userRepo.save(user);
@@ -67,11 +67,11 @@ public class UserService {
         return dbUser;
     }
 
-    public User login (String username, String password){
+    public User login(String username, String password) {
         User user = null;
 
         try {
-            user = userRepo.findAllByUserNameAndPassword(username, password);
+            user = userRepo.findAllByUsernameAndPassword(username, password);
             System.out.println(user.getLastName());
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,6 +79,7 @@ public class UserService {
 
         return user;
     }
+
     public User findCurrentUser() {
         // the login session is stored between page reloads,
         // and we can access the current authenticated user with this
@@ -86,12 +87,13 @@ public class UserService {
         User user = userRepo.findByUsername(username);
         try {
             user = addThemeToCurrentUser(user);
-            user = addOtherChannelToCurrentUser(user);
+            user = addOtherThemeToCurrentUser(user);
         } catch (Exception e) {
             System.out.println("There is no user currently logged in");
         }
         return user;
     }
+
     public User registerUser(User user) {
         return myUserDetailsConfig.addUser(user.getUsername(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName());
     }
@@ -100,7 +102,7 @@ public class UserService {
     public User addThemeToCurrentUser(User user) {
         List<UserThemeRel> foundUserThemes = userThemeRelRepo.findByUserId(user.getId());
         ArrayList<Theme> themes = new ArrayList<>();
-        //List<Channel> channels = null;
+        //List<Theme> Themes = null;
         for (UserThemeRel foundUserTheme : foundUserThemes) {
             themes.add(themeRepository.findById(foundUserTheme.getThemeId()));
         }
@@ -125,7 +127,7 @@ public class UserService {
 
         List<Object[]> rows = query.list();
 
-        for(Object[] row : rows){
+        for (Object[] row : rows) {
             Theme newTheme = new Theme();
             newTheme.setId(Integer.parseInt(row[0].toString()));
             newTheme.setTitle(row[1].toString());
@@ -135,4 +137,5 @@ public class UserService {
 
         user.setOtherThemes(otherThemes);
         return user;
+    }
 }

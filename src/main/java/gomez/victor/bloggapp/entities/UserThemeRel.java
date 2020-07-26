@@ -31,7 +31,7 @@ public class UserThemeRel {
         this.userId = userId;
     }
 
-    public int getChannelId() {
+    public int getThemeId() {
         return themeId;
     }
 

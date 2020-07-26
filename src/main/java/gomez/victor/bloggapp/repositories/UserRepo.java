@@ -1,7 +1,7 @@
 package gomez.victor.bloggapp.repositories;
 
 import org.springframework.stereotype.Repository;
-import gomez.victor.bloggapp.entities.User
+import gomez.victor.bloggapp.entities.User;
 import org.springframework.data.repository.CrudRepository;
 
 @Repository
