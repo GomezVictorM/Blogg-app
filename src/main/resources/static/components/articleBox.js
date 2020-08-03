@@ -4,8 +4,8 @@ export default {
             <h2>Theme: <span style="color: grey;">{{showThemeName}}</span></h2>
             <div v-for="article in show articles" class="article-div" :hover="true">
                 <span class="inner-article-div">
-                    <p class="article-name">{{article.senderName}}</p>
-                    <p class="article-date">{{article.articleDate}}</p>
+                    <p class="article-name">{{article.user}}</p>
+                    <p class="article-date">{{article.date}}</p>
                     <button v-if="checkDeleteArticle(article.senderId)" @click="onClick(article.id)" class="delete-button">🗑️</button>
                     <button v-if="checkIfAdmin()" @click="removeUser(article.senderId)" class="remove-user-button">Remove User</button>
                 </span>
