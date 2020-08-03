@@ -64,8 +64,6 @@ export default {
                 this.h3Text = "Error. Please try another username!"
             }
 
-            //this.$store.commit('setCurrentUser', result)
-
             this.firstName = ''
             this.lastName = ''
             this.email = ''

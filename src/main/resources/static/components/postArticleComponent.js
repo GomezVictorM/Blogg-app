@@ -2,7 +2,7 @@ export default {
     template: `
 
         <form @submit.prevent="postNewArticle" class="post-article-form">
-            <textarea v-model="article" class="post-article-textarea" placeholder="Post a new article..."></textarea>
+            <textarea v-model="article" class="post-article-textarea" placeholder="Post a new article here..."></textarea>
             <button class="post-article-button">Post Article</button>
         </form>
     `,
@@ -16,12 +16,12 @@ export default {
             let dateTime = this.getDateTime()
 
             let newArticle = {
-                articleDate: dateTime, //Fixed?
+                articleDate: dateTime,
                 article: this.article,
                 read: false,
                 senderId: this.$store.state.currentUser.id,
                 themeId: this.$store.state.currentTheme.id,
-                receiverId: null, //fix
+                receiverId: null,
                 direct: false
             }
 

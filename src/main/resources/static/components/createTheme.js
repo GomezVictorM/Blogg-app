@@ -4,7 +4,7 @@ export default {
         <form @submit.prevent="createNewTheme" class="create-new-theme">
             <input v-model="title" type="text"
             required
-            placeholder = "Name your new Theme">
+            placeholder = "Name your new Theme:">
 
             <button class="createButton">Create</button>
 
@@ -40,7 +40,7 @@ export default {
 
 					// Refresh the theme list
 				} catch (e) {
-					console.log("Unavailable to post it, sorry!");
+					console.log("Unavailable to post this article, sorry!");
 					console.log(e);
 				}
 			}

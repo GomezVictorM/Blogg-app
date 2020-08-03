@@ -21,8 +21,8 @@ export const router = new VueRouter({
       component: login
     },
     {
-      name: "logapp",
-      path: '/logapp',
+      name: "blogapp",
+      path: '/blogapp',
       component: blogapp
     },
     {
