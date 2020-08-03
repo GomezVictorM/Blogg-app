@@ -1,6 +1,5 @@
 package gomez.victor.bloggapp.repositories;
 
-import gomez.victor.bloggapp.entities.UserTheme;
 import gomez.victor.bloggapp.entities.UserThemeRel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
